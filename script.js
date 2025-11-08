@@ -1,15 +1,15 @@
 const app = document.getElementById("app");
 
 const images = [
-  { file: "https://drive.usercontent.google.com/uc?id=1zhuMjuSQaZo-nyZIQazdkNhO28gHAGL_&export=view", year: 2023, desc: "Vietnam",   descx: "Landmark 81, Ho Chi Minh City, 3 Jun <strong>2023</strong>" },
-  { file: "https://drive.usercontent.google.com/uc?id=1ioSs24vwZ-oFwx7kMo7Miy5P6V1pqFUp&export=view", year: 2019, desc: "Tekapo", 	  descx: "Lake Tekapo and the Church of the Good Shepherd, <strong>3 Aug 2019</strong>" },
-  { file: "https://drive.usercontent.google.com/uc?id=1Tk5_lEeCswsRAeUkjSh1_59s133Chun1&export=view", year: 2008, desc: "USJ", 	  descx: "Universal Studios Japan visit during band trip, <strong>Jun 2008</strong>" },
-  { file: "https://drive.usercontent.google.com/uc?id=1iosHKNvPvIN8-_2OwuwKpAgKRoyXZTKW&export=view", year: 2011, desc: "USS", 	  descx: "USS grand opening, <strong>29 May 2011</strong>" },
-  { file: "https://drive.usercontent.google.com/uc?id=1eihHVuCUFBOvgwDaVkobyGqUnMUYqcY7&export=view", year: 2019, desc: "Pokemon",   descx: "Newly opened Pokemon Centre at Changi Jewel, <strong>14 Apr 2019</strong>" },
-  { file: "https://drive.usercontent.google.com/uc?id=182J8HHwRfg-NEZogFPxPzZbM5K2j-RXT&export=view", year: 2019, desc: "NY band",   descx: "NY alumni band concert, <strong>2 Jun 2019</strong>" },
-  { file: "https://drive.usercontent.google.com/uc?id=1kqPXIax8s1TJ1hVrq2X0J8w1as3_MvFt&export=view", year: 2014, desc: "Da Capo",   descx: "Da Capo IX, <strong>27 Oct 2014</strong>" },
-  { file: "https://drive.usercontent.google.com/uc?id=1irpwPojVEnUr_g8NsCXYHx31VrF6ogSK&export=view", year: 2009, desc: "Coda", 	  descx: "Coda V exco, <strong>9 Aug 2009</strong>" },
-  { file: "https://drive.usercontent.google.com/uc?id=1OFhAuavzoUSEl2Aw-Dh9BvYvucESnUUz&export=view", year: 2018, desc: "Hong Kong", descx: "Hong Kong trip, <strong>6 May 2018</strong>" },
+  { file: "https://drive.usercontent.google.com/thumbnail?id=1zhuMjuSQaZo-nyZIQazdkNhO28gHAGL_", year: 2023, desc: "Vietnam",   descx: "Landmark 81, Ho Chi Minh City, 3 Jun <strong>2023</strong>" },
+  { file: "https://drive.usercontent.google.com/thumbnail?id=1ioSs24vwZ-oFwx7kMo7Miy5P6V1pqFUp", year: 2019, desc: "Tekapo", 	  descx: "Lake Tekapo and the Church of the Good Shepherd, <strong>3 Aug 2019</strong>" },
+  { file: "https://drive.usercontent.google.com/thumbnail?id=1Tk5_lEeCswsRAeUkjSh1_59s133Chun1", year: 2008, desc: "USJ", 	  descx: "Universal Studios Japan visit during band trip, <strong>Jun 2008</strong>" },
+  { file: "https://drive.usercontent.google.com/thumbnail?id=1iosHKNvPvIN8-_2OwuwKpAgKRoyXZTKW", year: 2011, desc: "USS", 	  descx: "USS grand opening, <strong>29 May 2011</strong>" },
+  { file: "https://drive.usercontent.google.com/thumbnail?id=1eihHVuCUFBOvgwDaVkobyGqUnMUYqcY7", year: 2019, desc: "Pokemon",   descx: "Newly opened Pokemon Centre at Changi Jewel, <strong>14 Apr 2019</strong>" },
+  { file: "https://drive.usercontent.google.com/thumbnail?id=182J8HHwRfg-NEZogFPxPzZbM5K2j-RXT", year: 2019, desc: "NY band",   descx: "NY alumni band concert, <strong>2 Jun 2019</strong>" },
+  { file: "https://drive.usercontent.google.com/thumbnail?id=1kqPXIax8s1TJ1hVrq2X0J8w1as3_MvFt", year: 2014, desc: "Da Capo",   descx: "Da Capo IX, <strong>27 Oct 2014</strong>" },
+  { file: "https://drive.usercontent.google.com/thumbnail?id=1irpwPojVEnUr_g8NsCXYHx31VrF6ogSK", year: 2009, desc: "Coda", 	  descx: "Coda V exco, <strong>9 Aug 2009</strong>" },
+  { file: "https://drive.usercontent.google.com/thumbnail?id=1OFhAuavzoUSEl2Aw-Dh9BvYvucESnUUz", year: 2018, desc: "Hong Kong", descx: "Hong Kong trip, <strong>6 May 2018</strong>" },
   { file: "img10.png", year: 2025, desc: "???", 	  descx: "???" }
 ];
 
