@@ -1,7 +1,7 @@
 const app = document.getElementById("app");
 
 const images = [
-  { file: "https://drive.usercontent.google.com/thumbnail?id=1zhuMjuSQaZo-nyZIQazdkNhO28gHAGL_", year: 2023, desc: "Vietnam",   descx: "Landmark 81, Ho Chi Minh City, 3 Jun <strong>2023</strong>" },
+  { file: "https://lh3.googleusercontent.com/d/1zhuMjuSQaZo-nyZIQazdkNhO28gHAGL_", year: 2023, desc: "Vietnam",   descx: "Landmark 81, Ho Chi Minh City, 3 Jun <strong>2023</strong>" },
   { file: "https://drive.usercontent.google.com/thumbnail?id=1ioSs24vwZ-oFwx7kMo7Miy5P6V1pqFUp", year: 2019, desc: "Tekapo", 	  descx: "Lake Tekapo and the Church of the Good Shepherd, <strong>3 Aug 2019</strong>" },
   { file: "https://drive.usercontent.google.com/thumbnail?id=1Tk5_lEeCswsRAeUkjSh1_59s133Chun1", year: 2008, desc: "USJ", 	  descx: "Universal Studios Japan visit during band trip, <strong>Jun 2008</strong>" },
   { file: "https://drive.usercontent.google.com/thumbnail?id=1iosHKNvPvIN8-_2OwuwKpAgKRoyXZTKW", year: 2011, desc: "USS", 	  descx: "USS grand opening, <strong>29 May 2011</strong>" },
