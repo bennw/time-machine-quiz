@@ -5,12 +5,12 @@ const images = [
   { file: "https://lh3.googleusercontent.com/d/1ioSs24vwZ-oFwx7kMo7Miy5P6V1pqFUp", year: 2019, desc: "Tekapo", 	  descx: "Lake Tekapo and the Church of the Good Shepherd, <strong>3 Aug 2019</strong>" },
   { file: "https://lh3.googleusercontent.com/d/1Tk5_lEeCswsRAeUkjSh1_59s133Chun1", year: 2008, desc: "USJ", 	  descx: "Universal Studios Japan visit during band trip, <strong>Jun 2008</strong>" },
   { file: "https://lh3.googleusercontent.com/d/1iosHKNvPvIN8-_2OwuwKpAgKRoyXZTKW", year: 2011, desc: "USS", 	  descx: "USS grand opening, <strong>29 May 2011</strong>" },
-  { file: "https://lh3.googleusercontent.com/d/1eihHVuCUFBOvgwDaVkobyGqUnMUYqcY7", year: 2019, desc: "Pokemon",   descx: "Newly opened Pokemon Centre at Changi Jewel, <strong>14 Apr 2019</strong>" },
+  { file: "https://lh3.googleusercontent.com/d/1Mxp73nFJ6fGC_vWkVblEp9A2weEPTHqD", year: 2012, desc: "Wanaka",    descx: "Another New Zealand skydiving trip, <strong>Aug 2012</strong>" },
   { file: "https://lh3.googleusercontent.com/d/182J8HHwRfg-NEZogFPxPzZbM5K2j-RXT", year: 2019, desc: "NY band",   descx: "NY alumni band concert, <strong>2 Jun 2019</strong>" },
   { file: "https://lh3.googleusercontent.com/d/1kqPXIax8s1TJ1hVrq2X0J8w1as3_MvFt", year: 2014, desc: "Da Capo",   descx: "Da Capo IX, <strong>27 Oct 2014</strong>" },
   { file: "https://lh3.googleusercontent.com/d/1irpwPojVEnUr_g8NsCXYHx31VrF6ogSK", year: 2009, desc: "Coda", 	  descx: "Coda V exco, <strong>9 Aug 2009</strong>" },
   { file: "https://lh3.googleusercontent.com/d/1OFhAuavzoUSEl2Aw-Dh9BvYvucESnUUz", year: 2018, desc: "Hong Kong", descx: "Hong Kong trip, <strong>6 May 2018</strong>" },
-  { file: "img10.png", year: 2025, desc: "???", 	  descx: "???" }
+  { file: "https://lh3.googleusercontent.com/d/1EW5GaETWbKXHVW3jUpEGzRXE_QmSbQJH", year: 2025, desc: "Presents",  descx: "Presents for <strong>2025</strong>" }
 ];
 
 let currentIndex = 0;
@@ -77,7 +77,7 @@ function submitGuess() {
 
   app.innerHTML = `
     <h2>Result</h2>
-    <img src="images/${img.file}" alt="Result Image">
+    <img src="${img.file}" alt="Result Image">
     <p>${img.descx}</p>
     <div class="result-grid">
 	  <div><strong>Your guess:</strong></div>
