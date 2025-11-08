@@ -1,24 +1,25 @@
 const app = document.getElementById("app");
 
 const images = [
-  { file: "img01.png", year: 2007, desc: "Description for image 1." },
-  { file: "img02.png", year: 2010, desc: "Description for image 2." },
-  { file: "img03.png", year: 2012, desc: "Description for image 3." },
-  { file: "img04.png", year: 2014, desc: "Description for image 4." },
-  { file: "img05.png", year: 2016, desc: "Description for image 5." },
-  { file: "img06.png", year: 2017, desc: "Description for image 6." },
-  { file: "img07.png", year: 2018, desc: "Description for image 7." },
-  { file: "img08.png", year: 2019, desc: "Description for image 8." },
-  { file: "img09.png", year: 2021, desc: "Description for image 9." },
-  { file: "img10.png", year: 2023, desc: "Description for image 10." }
+  { file: "https://drive.usercontent.google.com/download?id=1zhuMjuSQaZo-nyZIQazdkNhO28gHAGL_&export=view", year: 2023, desc: "Vietnam",   descx: "Landmark 81, Ho Chi Minh City, 3 Jun <strong>2023</strong>" },
+  { file: "https://drive.usercontent.google.com/download?id=1ioSs24vwZ-oFwx7kMo7Miy5P6V1pqFUp&export=view", year: 2019, desc: "Tekapo", 	  descx: "Lake Tekapo and the Church of the Good Shepherd, <strong>3 Aug 2019</strong>" },
+  { file: "https://drive.usercontent.google.com/download?id1Tk5_lEeCswsRAeUkjSh1_59s133Chun1=&export=view", year: 2008, desc: "USJ", 	  descx: "Universal Studios Japan visit during band trip, <strong>Jun 2008</strong>" },
+  { file: "https://drive.usercontent.google.com/download?id=1iosHKNvPvIN8-_2OwuwKpAgKRoyXZTKW&export=view", year: 2011, desc: "USS", 	  descx: "USS grand opening, <strong>29 May 2011</strong>" },
+  { file: "https://drive.usercontent.google.com/download?id=1eihHVuCUFBOvgwDaVkobyGqUnMUYqcY7&export=view", year: 2019, desc: "Pokemon",   descx: "Newly opened Pokemon Centre at Changi Jewel, <strong>14 Apr 2019</strong>" },
+  { file: "https://drive.usercontent.google.com/download?id=182J8HHwRfg-NEZogFPxPzZbM5K2j-RXT&export=view", year: 2019, desc: "NY band",   descx: "NY alumni band concert, <strong>2 Jun 2019</strong>" },
+  { file: "https://drive.usercontent.google.com/download?id=1kqPXIax8s1TJ1hVrq2X0J8w1as3_MvFt&export=view", year: 2014, desc: "Da Capo",   descx: "Da Capo IX, <strong>27 Oct 2014</strong>" },
+  { file: "https://drive.usercontent.google.com/download?id=1irpwPojVEnUr_g8NsCXYHx31VrF6ogSK&export=view", year: 2009, desc: "Coda", 	  descx: "Coda V exco, <strong>9 Aug 2009</strong>" },
+  { file: "https://drive.usercontent.google.com/download?id=1OFhAuavzoUSEl2Aw-Dh9BvYvucESnUUz&export=view", year: 2018, desc: "Hong Kong", descx: "Hong Kong trip, <strong>6 May 2018</strong>" },
+  { file: "img10.png", year: 2025, desc: "???", 	  descx: "???" }
 ];
 
 let currentIndex = 0;
 let totalScore = 0;
+let results = []; // store each round result
 
 function showTitleScreen() {
   app.innerHTML = `
-    <h1>Timeguessr</h1>
+    <h1>TIMEGU35SR</h1>
     <button onclick="startGame()">Play</button>
   `;
 }
@@ -26,6 +27,7 @@ function showTitleScreen() {
 function startGame() {
   currentIndex = 0;
   totalScore = 0;
+  results = [];
   showGuessScreen();
 }
 
@@ -33,10 +35,11 @@ function showGuessScreen() {
   const img = images[currentIndex];
   app.innerHTML = `
     <h2>Image ${currentIndex + 1} of ${images.length}</h2>
-    <img src="images/${img.file}" alt="Guess Image">
-    <div id="year-display">Year: 2015</div>
-    <input type="range" min="2005" max="2025" value="2015" id="year-slider">
-    <br><br>
+    <img src="${img.file}" alt="Guess Image">
+    <div id="year-display">Year: 2012</div>
+	<br>
+    <input type="range" min="2000" max="2025" value="2012" id="year-slider">
+    <br><br><br><br>
     <button onclick="submitGuess()">Submit</button>
   `;
 
@@ -55,19 +58,35 @@ function submitGuess() {
 
   let points = 0;
   if (diff === 0) points = 5000;
-  else if (diff === 1) points = 3000;
-  else if (diff === 2) points = 1500;
-  else if (diff === 3) points = 500;
+  else if (diff === 1) points = 4000;
+  else if (diff === 2) points = 3000;
+  else if (diff === 3) points = 2000;
+  else if (diff === 4) points = 1000;
 
   totalScore += points;
+  results.push({
+    desc: img.desc,
+    guess: guess,
+    answer: img.year,
+    points: points
+  });
+
+  // color interpolation (0 → red, 5000 → green)
+  const hue = (points / 5000) * 120; 
+  const color = `hsl(${hue}, 80%, 40%)`;
 
   app.innerHTML = `
     <h2>Result</h2>
     <img src="images/${img.file}" alt="Result Image">
-    <p>Correct year: <strong>${img.year}</strong></p>
-    <p>${img.desc}</p>
-    <p>You guessed: ${guess}</p>
-    <p>Points earned: ${points}</p>
+    <p>${img.descx}</p>
+    <div class="result-grid">
+	  <div><strong>Your guess:</strong></div>
+	  <div>${guess}</div>
+	  <div><strong>Correct:</strong></div>
+	  <div>${img.year}</div>
+	  <div><strong>Points:</strong></div>
+	  <div><span style="color:${color}">${points}</span></div>
+    </div><br>
     <button onclick="nextImage()">Next</button>
   `;
 }
@@ -82,9 +101,34 @@ function nextImage() {
 }
 
 function showFinalResults() {
+  let tableRows = results.map(r => {
+    const hue = (r.points / 5000) * 120; // 0=red, 5000=green
+    const color = `hsl(${hue}, 80%, 40%)`;
+    return `
+      <tr>
+        <td>${r.desc}</td>
+        <td>${r.guess}</td>
+        <td>${r.answer}</td>
+        <td><span style="color:${color}">${r.points}</span></td>
+      </tr>
+    `;
+  }).join("");
   app.innerHTML = `
-    <h2>Game Over</h2>
-    <p class="score">Total Score: ${totalScore}</p>
+    <h2>Summary</h2>
+    <table border="1" cellpadding="8" cellspacing="0" style="margin: 0 auto; border-collapse: collapse;">
+      <thead>
+        <tr>
+          <th>Desc</th>
+          <th>Guess</th>
+          <th>Answer</th>
+          <th>Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${tableRows}
+      </tbody>
+    </table>
+    <p class="score">Total Score: <strong>${totalScore}</strong></p>
     <button onclick="showTitleScreen()">Play Again</button>
   `;
 }

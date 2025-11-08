@@ -17,7 +17,8 @@ body {
 }
 
 h1 {
-  font-size: 3em;
+  font-family: Haettenschweiler;
+  font-size: 6em;
   margin-bottom: 20px;
 }
 
@@ -37,8 +38,11 @@ button:hover {
 
 img {
   max-width: 100%;
+  height: auto;
   border-radius: 10px;
   margin: 20px 0;
+  max-height: 60vh; /* <= ensures image never exceeds 60% of the viewport height */
+  object-fit: contain; /* scales while preserving aspect ratio */
 }
 
 input[type=range] {
@@ -54,4 +58,13 @@ input[type=range] {
   font-size: 2em;
   margin-top: 20px;
   font-weight: bold;
+}
+
+.result-grid {
+  display: inline-grid;
+  grid-template-columns: auto auto;
+  gap: 8px 20px; /* row gap, column gap */
+  margin: 15px auto;
+  text-align: left;
+  font-size: 1.2em;
 }
